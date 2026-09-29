@@ -206,6 +206,8 @@
     String(today.getMonth() + 1).padStart(2, "0") + "-" +
     String(today.getDate()).padStart(2, "0");
 
-  const browserLang = (navigator.language || "en").toLowerCase();
-  applyLanguage(browserLang.startsWith("tr") ? "tr" : "en");
+  // English is the default for everyone: the audience this is published to is
+  // English-speaking, and a page that greets half of them in another language
+  // reads like a different site. Turkish is one tap away in the corner.
+  applyLanguage("en");
 })();
